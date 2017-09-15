@@ -24,7 +24,7 @@ def test_adding_listener_for_an_action(mocker):
     gate.state_machine.listen(state="locked", event="coin", action=stub)
     gate.coin()
 
-    stub.assert_called_once()
+    assert stub.call_count == 1
 
 def test_will_alarm_when_passing_through_a_locked_gate(mocker):
     gate = Gate()
