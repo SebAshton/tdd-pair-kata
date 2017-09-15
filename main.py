@@ -19,7 +19,6 @@ class StateMachine(object):
         actions = self.__actions.get(key) or []
         [action() for action in actions]
 
-
 class Gate(object):
     def __init__(self, current_state="locked"):
         self.state_machine = StateMachine(current_state=current_state)
@@ -41,9 +40,6 @@ class Gate(object):
 
     def current_state(self):
         return self.state_machine.current_state()
-
-    def go_to(self, state):
-        self.state_machine.go_to(state)
 
     def coin(self): self.state_machine.trigger("coin")
     def through(self): self.state_machine.trigger("through")
