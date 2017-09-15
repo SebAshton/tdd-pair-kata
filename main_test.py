@@ -21,7 +21,7 @@ def test_can_unlock_and_pass_through_a_gate():
 def test_adding_listener_for_an_action(mocker):
     stub = mocker.stub(name='on_locked_coin')
     gate = Gate()
-    gate.listen(state="locked", event="coin", action=stub)
+    gate.state_machine.listen(state="locked", event="coin", action=stub)
     gate.coin()
 
     stub.assert_called_once_with(gate)
