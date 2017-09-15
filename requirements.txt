@@ -39,3 +39,4 @@ Twisted==17.1.0
 urllib3==1.21.1
 wcwidth==0.1.7
 zope.interface==4.3.3
+pytest-mock
